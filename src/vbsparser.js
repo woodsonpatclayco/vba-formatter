@@ -586,6 +586,16 @@ var vbsparser = function vbsparser_(options) {
                 }
 
                 break;
+              case 'resume'
+                nextword = readnextword()
+                 if (nextWord.toLowerCase() === 'next') {
+                   read(n)
+                   pushtoken('Resume Next','Resume_Next');
+                 } else {
+                   pushToken(tokenTable[word.toLowerCase()].label, tokenTable[word.toLowerCase()].type);
+                }
+
+                break;
               case 'on':
                 nextWord = readNextWord();
 
